@@ -11,4 +11,5 @@ EXPOSE 8080
 RUN mkdir /opt/calibre && mkdir /opt/calibre/library
 
 VOLUME        ["/opt/calibre/library"]
+RUN calibredb --with-library /opt/calibre/library list
 ENTRYPOINT           ["/usr/bin/calibre-server", "/opt/calibre/library"]
